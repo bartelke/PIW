@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <p class="logo">
+            Travelly
+        </p>
+        <ul class="menu">
+            <li><a class="menu-item" href="a">Home</a></li>
+            <li><a class="menu-item" href="a">About</a></li>
+            <li><a class="menu-item" href="a">Trips</a></li>
+            <li><a class="menu-item" href="a">Reviews</a></li>
+            <li><a class="menu-item" href="a">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hero-section" class="hero-section grid">
+        <div class="hero-image">
+            <div class="welcome-text">
+                <h3>Your adventure starts now</h3>
+                <p>Start discovering the world around you today</p>
+            </div>
+            <div class="search-container">
+                <input placeholder="What's your dream destination?">
+                <button class="primary-green" type="submit">Browse</button>
+
+            </div>
+        </div>
+    </section>
+    <section id="destinations-section" class="destinations-section grid">
+        <h3 class="orange destinations-text">Our most popular destinations</h3>
+        <article class="card" type="destination" mode="vertical">
+            <div class="destination-image-container">
+                <img class="destination-image" src="./assets/Athens.jpg" alt="Ateny">
+            </div>
+            <div class="destination-content">
+                <div class="destination-card-header">
+                    <p class="green bold">Athens, Grece</p>
+                    <p>23.04.2023-05.05.2023</p>
+                </div>
+                <p class="dark">Experience the rich history and culture of Athens, one of the world's oldest cities and the birthplace of Western civilization. Wander through the streets of Plaka, the charming historic district, and marvel at the ancient landmarks that have stood the test of time.</p>
+                <div class="destination-card-footer">
+                    <p class="orange bold">650€/person</p>
+                    <button class="primary-orange">Book now</button>
+                </div>
+            </div> 
+        </article>
+        <article class="card" type="destination" mode="horizontal">
+            <div class="destination-image-container" mode="horizontal">
+                <img class="destination-image" src="./assets/Krabi.jpg" alt="Ateny" mode="horizontal">
+            </div>
+            <div class="destination-content">
+                <div class="destination-card-header">
+                    <p class="green bold">Krabi, Thailand</p>
+                    <p>23.03.2023-07.04.2023</p>
+                </div>
+                <p class="dark">Explore the magnificent natural wonders of Krabi, including the famous Railay Beach, accessible only by boat and surrounded by towering limestone cliffs.</p>
+                <div class="destination-card-footer">
+                    <p class="orange bold">910€/person</p>
+                    <button class="primary-orange">Book now</button>
+                </div>
+            </div> 
+        </article>
+    </section>
+</body>
+</html>
