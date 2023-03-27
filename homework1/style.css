@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 :root {
     --font-dark: #3B3B3B;
     --btn-gold: #FFC044;
+    --dark-gold: #6C4801;
 
     --white: #FFFFFF;
 
@@ -24,11 +25,43 @@ html{
 
 a { text-decoration: none; }
 
+h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+
+    text-align: center;
+
+    color: var(--font-dark);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--font-dark);
+}
+
+nav{
+    height: 12vh;
+    width: 1920px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+
+}
+
+input{
+    width: 560px;
+    height: 64px;
+
+    background: #FFFFFF;
+    border: 1px solid #98A9FF;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-top: 0.3em;
 }
 
 .grid {
@@ -47,6 +80,7 @@ a { text-decoration: none; }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
 }
 
 .menu{
@@ -58,16 +92,67 @@ a { text-decoration: none; }
 }
 
 .menu-item{
-    color: var(--font-dark);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 15px;
     gap: 10px;
     border-radius: 4px;
-    font-size: 16px;
 }
 
 .gold{
     background-color: var(--btn-gold);
+}
+.dark-gold-txt{
+    color: var(--dark-gold);
+    color: var(--font-dark);
+}
+
+.txt{
+    font-size: 16px;
+}
+
+.login-container{
+    grid-column-start: 2;
+    width: 560px;
+    position: relative;
+    text-align: center;
+    height: 80vh;
+    top: 92px;
+}
+
+.dots{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hero-img{
+    grid-column: 8/12;
+    width: 641px;
+    height: auto;
+}
+
+.hero-section{
+    margin-top: 12vh;
+}
+
+.input-label{
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.3em;
+}
+
+.log-btn{
+    width: 80px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 2em;
+    font-size: 16px;
 }
