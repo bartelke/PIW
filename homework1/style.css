@@ -4,7 +4,7 @@
     --font-dark: #3B3B3B;
     --btn-gold: #FFC044;
     --dark-gold: #6C4801;
-
+    --unknown: #FFF8E4;
     --white: #FFFFFF;
 
     --outer-radius: 1rem;
@@ -30,10 +30,20 @@ h3{
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
+    display: flex;
+    justify-content: center;
 
     text-align: center;
 
     color: var(--font-dark);
+}
+
+h4{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 18px;
+    margin: 1em;
+    color: #6C4801;
 }
 
 *{
@@ -62,6 +72,11 @@ input{
     border-radius: 4px;
     padding: 0.5em;
     margin-top: 0.3em;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
 }
 
 .grid {
@@ -121,9 +136,16 @@ input{
     top: 92px;
 }
 
-.dots{
+.dots-left{
     display: flex;
     justify-content: flex-start;
+}
+
+.dots-right{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10em;
 }
 
 .hero-img{
@@ -155,4 +177,66 @@ input{
     border: none;
     margin-top: 2em;
     font-size: 16px;
+}
+
+.about-box{
+    background-color: var(--unknown);
+    margin: 10vh;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 560px;
+}
+
+.centered {
+    padding: 1.5em;
+  position: absolute;
+  text-align: center;
+  width: 560px;
+}
+
+.container-about {
+    margin-top: 2em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.centered-about {
+    margin-top: 1.5em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.whitebox-left{
+    display: grid;
+    grid-column: 2/7;
+    background-color: var(--white);
+    height: 212px;
+    text-align: center;
+}
+
+.whitebox-right{
+    display: grid;
+    grid-column: 7/12;
+    background-color: var(--white);
+    height: 212px;
+    text-align: center;
+}
+
+.marg-top{
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+}
+
+.marg-bottom{
+    margin-bottom: 10vh;
+}
+
+.box-txt{
+    margin: 1em;
+    text-align: center;
 }
