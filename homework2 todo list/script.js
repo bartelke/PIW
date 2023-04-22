@@ -1,0 +1,3 @@
+function onAdd() {
+    alert("bangla");
+}
