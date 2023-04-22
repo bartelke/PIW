@@ -16,6 +16,10 @@ input{
     border-radius: 0.5em;
     border: 1px solid #6c757d;
 }
+footer{
+    background-color: #3C4048;
+    margin: 0px;
+}
 .input-line{
     width: 400px;
     display: flex;
