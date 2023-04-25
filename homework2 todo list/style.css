@@ -16,9 +16,24 @@ input{
     border-radius: 0.5em;
     border: 1px solid #6c757d;
 }
-footer{
-    background-color: #3C4048;
-    margin: 0px;
+ul {
+    list-style-type: none;
+    padding-left: none;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-left: none;
+    }
+li{
+    display: flex;
+    justify-content: space-between;
+    margin-left: none;
+    margin-right: 1em;
+    padding: 0.3em;
+    border-radius: 0.4em;
+}
+li:hover{
+    border-radius: 0.4em;
+    border: 2px solid azure;
 }
 .input-line{
     width: 400px;
