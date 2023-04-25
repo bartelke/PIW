@@ -16,7 +16,6 @@ function onAdd() {
     dateElement.style.color = "#EAEAEA";
     dateElement.textContent = dateString;
 
-    // dodanie elementu z tekstem do elementu listy
     element.appendChild(dateElement);
     element.addEventListener("click", function() {
       this.classList.toggle("checked");
@@ -32,6 +31,8 @@ function onAdd() {
 }
 
 // this function adds X-button in given list element (JQuerry):
+let deletedElements = [];
+
 function addX(element) {
   const $btnLine = $("<btn-span>");
   const $txt = $("<span>x</span>");
@@ -39,20 +40,17 @@ function addX(element) {
   $btnLine.append($txt);
   $btnLine.click(function() {
     $(this).parent().hide();
+    deletedElements = [];
+    deletedElements.push(element);
   });
   $(element).append($btnLine);
 }
-// Creating X buttons for already existing elements:
-const element = document.getElementsByTagName("LI");
-for (let i = 0; i < element.length; i++){
-  addX(element[i]);
-}
 
-// Add toggle event listener for existing elements:
-const listItems = document.getElementsByTagName("li");
-
-for (let i = 0; i < listItems.length; i++) {
-  listItems[i].addEventListener("click", function() {
-    this.classList.toggle("checked");
-  });
-}
+// show last deleted element:
+document.addEventListener("keydown", function(event) {
+  if (event.ctrlKey && event.key === "z") {
+      const elementToShow = deletedElements.pop();
+      $(elementToShow).show();
+    }
+  }
+);
