@@ -13,7 +13,7 @@ function onAdd() {
     const year = currentDate.getFullYear();
     const dateString = day + '.' + month + '.' + year;
     const dateElement = document.createElement("span");
-    dateElement.style.color = "#00ABB3"; // lub dateElement.style.color = "#ff0000";
+    dateElement.style.color = "#EAEAEA";
     dateElement.textContent = dateString;
 
     // dodanie elementu z tekstem do elementu listy
@@ -36,7 +36,6 @@ function addX(element) {
   $btnLine.append($txt);
   $btnLine.click(function() {
     $(this).parent().hide();
-    deletedElement = element;
   });
   $(element).append($btnLine);
 }
