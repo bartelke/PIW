@@ -1,8 +1,24 @@
+"use strict";
+
 function onAdd() {
     const inputValue = document.getElementById("input").value;
     const element = document.createElement("li");
     const textNode = document.createTextNode(inputValue);
     element.appendChild(textNode);
+
+    //add date:
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+    const dateString = day + '.' + month + '.' + year;
+    const dateElement = document.createElement("span");
+    dateElement.style.color = "#00ABB3"; // lub dateElement.style.color = "#ff0000";
+    dateElement.textContent = dateString;
+
+    // dodanie elementu z tekstem do elementu listy
+    element.appendChild(dateElement);
+
   if (inputValue === '') {
     alert("Input field is empty");
   } else {
@@ -20,6 +36,7 @@ function addX(element) {
   $btnLine.append($txt);
   $btnLine.click(function() {
     $(this).parent().hide();
+    deletedElement = element;
   });
   $(element).append($btnLine);
 }
