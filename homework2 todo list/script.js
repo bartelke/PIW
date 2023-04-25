@@ -12,29 +12,19 @@ function onAdd() {
   addX(element);
 }
 
-// this function adds X-button in given list element:
-function addX(element){
-    const btnLine = document.createElement("btn-span");
-    const txt = document.createTextNode("x");
-    btnLine.className = "btn btn-danger";
-    btnLine.appendChild(txt);
-    btnLine.onclick = function() {
-      const div = this.parentElement;
-      div.style.display = "none";
-    };
-    element.appendChild(btnLine);
+// this function adds X-button in given list element (JQuerry):
+function addX(element) {
+  const $btnLine = $("<btn-span>");
+  const $txt = $("<span>x</span>");
+  $btnLine.addClass("btn btn-danger");
+  $btnLine.append($txt);
+  $btnLine.click(function() {
+    $(this).parent().hide();
+  });
+  $(element).append($btnLine);
 }
 // Creating X buttons for already existing elements:
 const element = document.getElementsByTagName("LI");
 for (let i = 0; i < element.length; i++){
   addX(element[i]);
 }
-
-// Deleting element:
-// const close = document.getElementsByClassName("btn-danger");
-// for (let i = 0; i < close.length; i++) {
-//   close[i].onclick = function() {
-//     const div = this.parentElement;
-//     div.style.display = "none";
-//   }
-// }
