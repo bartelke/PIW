@@ -18,6 +18,9 @@ function onAdd() {
 
     // dodanie elementu z tekstem do elementu listy
     element.appendChild(dateElement);
+    element.addEventListener("click", function() {
+      this.classList.toggle("checked");
+    });
 
   if (inputValue === '') {
     alert("Input field is empty");
@@ -43,4 +46,13 @@ function addX(element) {
 const element = document.getElementsByTagName("LI");
 for (let i = 0; i < element.length; i++){
   addX(element[i]);
+}
+
+// Add toggle event listener for existing elements:
+const listItems = document.getElementsByTagName("li");
+
+for (let i = 0; i < listItems.length; i++) {
+  listItems[i].addEventListener("click", function() {
+    this.classList.toggle("checked");
+  });
 }
