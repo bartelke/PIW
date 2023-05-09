@@ -1,0 +1,27 @@
+label{
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    width: 500px;
+    margin: 4em;
+}
+
+input{
+    height: 1.5em;
+    width: 350px;
+}
+
+#cancel{
+    background-color: white;
+    border: solid;
+    border-color: red;
+    color: red;
+    border-radius: 15px;
+}
+input{
+    border-radius: 0.7em;
+    border: none;
+    padding: 0.5em;
+}

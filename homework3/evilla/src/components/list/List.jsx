@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Add from '../add/Add';
 import '../list/List.css';
+import { Link } from 'react-router-dom';
 
 function List() {
   const [list, setList] = useState([
@@ -19,16 +19,6 @@ function List() {
       address: "Janiszewskiego 7, 50-372 Wrocław"
     }
   ]);
-  
-  const [showAdd, setShowAdd] = useState(false);
-
-  const toggleAdd = () => {
-    setShowAdd(!showAdd);
-  }
-
-  const handleAddItem = newItem => {
-    setList([...list, newItem]);
-  };
 
   const handleDeleteItem = index => {
     const newList = [...list];
@@ -40,10 +30,9 @@ function List() {
     <div class="container">
       <div class="header">
         <h1>Book house to find your dream place!</h1>
-        <button onClick={toggleAdd}>{showAdd ? 'Cancel' : 'Add New'}</button>
-          {showAdd && (<Add handleAddItem={handleAddItem} />)}
+        <Link to="/add"><button>Add New</button></Link>
       </div>
-        
+      
       <ul>
         {list.map((item, index) => (
           <li key={index}>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../add/Add.css'
 
 function Add(props) {
   const [newItemName, setNewItemName] = useState("");
@@ -25,7 +27,11 @@ function Add(props) {
 
   return (
     <div>
-      <h2>Add new house</h2>
+      <div class="header">
+        <h1>Book house to find your dream place!</h1>
+        <Link to="/"><button id="cancel">Cancel</button></Link>
+      </div>
+      <form>
       <label>
         Name:
         <input
@@ -72,6 +78,7 @@ function Add(props) {
       </label>
       <br />
       <button onClick={handleAddItem}>Dodaj ofertę</button>
+      </form>
     </div>
   );
 }
