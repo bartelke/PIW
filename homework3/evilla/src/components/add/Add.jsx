@@ -45,15 +45,18 @@ function Add(props) {
       <label htmlFor="name">Name:</label>
       <input type="text" id="name" value={name} onChange={handleNameChange} required />
       <label htmlFor="description">Description:</label>
-      <textarea id="description" value={description} onChange={handleDescriptionChange} required />
+      <input type="text" value={description} onChange={handleDescriptionChange} required />
       <label htmlFor="bedrooms">Bedrooms:</label>
       <input type="number" id="bedrooms" value={bedrooms} onChange={handleBedroomsChange} required />
       <label htmlFor="price">Price:</label>
       <input type="number" id="price" value={price} onChange={handlePriceChange} required />
       <label htmlFor="address">Address:</label>
       <input type="text" id="address" value={address} onChange={handleAddressChange} required />
-      <button type="submit">Add</button>
-      <Link to="/"><button>Add New</button></Link>
+      <div class="add-footer">
+        <button id="submit" type="submit">Add</button>
+        <Link to="/"><button id="back">Back to list</button></Link>     
+      </div>
+
     </form>
   );
 }
