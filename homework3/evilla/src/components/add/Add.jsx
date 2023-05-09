@@ -1,85 +1,60 @@
 import React, { useState } from 'react';
+import './Add.css';
 import { Link } from 'react-router-dom';
-import '../add/Add.css'
 
 function Add(props) {
-  const [newItemName, setNewItemName] = useState("");
-  const [newItemDescription, setNewItemDescription] = useState("");
-  const [newItemBedrooms, setNewItemBedrooms] = useState("");
-  const [newItemPrice, setNewItemPrice] = useState("");
-  const [newItemAddress, setNewItemAddress] = useState("");
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [bedrooms, setBedrooms] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [address, setAddress] = useState('');
 
-  const handleAddItem = () => {
-    const newItem = {
-      name: newItemName,
-      description: newItemDescription,
-      bedrooms: newItemBedrooms,
-      price: newItemPrice,
-      address: newItemAddress
-    };
+  const handleNameChange = event => {
+    setName(event.target.value);
+  };
+
+  const handleDescriptionChange = event => {
+    setDescription(event.target.value);
+  };
+
+  const handleBedroomsChange = event => {
+    setBedrooms(event.target.value);
+  };
+
+  const handlePriceChange = event => {
+    setPrice(event.target.value);
+  };
+
+  const handleAddressChange = event => {
+    setAddress(event.target.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const newItem = { name, description, bedrooms, price, address };
     props.handleAddItem(newItem);
-    setNewItemName("");
-    setNewItemDescription("");
-    setNewItemBedrooms("");
-    setNewItemPrice("");
-    setNewItemAddress("");
+    setName('');
+    setDescription('');
+    setBedrooms(0);
+    setPrice(0);
+    setAddress('');
   };
 
   return (
-    <div>
-      <div class="header">
-        <h1>Book house to find your dream place!</h1>
-        <Link to="/"><button id="cancel">Cancel</button></Link>
-      </div>
-      <form>
-      <label>
-        Name:
-        <input
-          type="text"
-          value={newItemName}
-          onChange={e => setNewItemName(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Description:
-        <input
-          type="text"
-          value={newItemDescription}
-          onChange={e => setNewItemDescription(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Bedrooms:
-        <input
-          type="number"
-          value={newItemBedrooms}
-          onChange={e => setNewItemBedrooms(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Price:
-        <input
-          type="number"
-          value={newItemPrice}
-          onChange={e => setNewItemPrice(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Adress:
-        <input
-          type="text"
-          value={newItemAddress}
-          onChange={e => setNewItemAddress(e.target.value)}
-        />
-      </label>
-      <br />
-      <button onClick={handleAddItem}>Dodaj ofertę</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="Add">
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" value={name} onChange={handleNameChange} required />
+      <label htmlFor="description">Description:</label>
+      <textarea id="description" value={description} onChange={handleDescriptionChange} required />
+      <label htmlFor="bedrooms">Bedrooms:</label>
+      <input type="number" id="bedrooms" value={bedrooms} onChange={handleBedroomsChange} required />
+      <label htmlFor="price">Price:</label>
+      <input type="number" id="price" value={price} onChange={handlePriceChange} required />
+      <label htmlFor="address">Address:</label>
+      <input type="text" id="address" value={address} onChange={handleAddressChange} required />
+      <button type="submit">Add</button>
+      <Link to="/"><button>Add New</button></Link>
+    </form>
   );
 }
 

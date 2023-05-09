@@ -1,48 +1,24 @@
-import React, { useState } from 'react';
-import '../list/List.css';
+import './List.css';
 import { Link } from 'react-router-dom';
 
-function List() {
-  const [list, setList] = useState([
-    {
-      name: "Villa C13",
-      description: "villa with round windows, in summer you will feel the tropical atmosphere of the place",
-      bedrooms: 12,
-      price: 8000000,
-      address: "wybrzeże Stanisława Wyspiańskiego 23-25, 50-370 Wrocław"
-    },
-    {
-      name: "Villa C16",
-      description: "a large estate with modern architecture located in a place known for the conquests of the Vikings, you can still meet their descendants here",
-      bedrooms: 4,
-      price: 6000000,
-      address: "Janiszewskiego 7, 50-372 Wrocław"
-    }
-  ]);
-
-  const handleDeleteItem = index => {
-    const newList = [...list];
-    newList.splice(index, 1);
-    setList(newList);
-  };
-
+function List(props) {
   return (
-    <div class="container">
-      <div class="header">
+    <div className="container">
+      <div className="header">
         <h1>Book house to find your dream place!</h1>
-        <Link to="/add"><button>Add New</button></Link>
+          <Link to="/add"><button>Add New</button></Link>
       </div>
-      
+        
       <ul>
-        {list.map((item, index) => (
+        {props.list.map((item, index) => (
           <li key={index}>
             <h2>{item.name}</h2>
             <p>{item.description}</p>
             <p>{item.bedrooms} bedrooms</p>
             <p>Adress: {item.address}</p>
-            <div class="footer">
+            <div className="footer">
               <p><strong>Price: {item.price} pln</strong></p>
-              <button onClick={() => handleDeleteItem(index)}>Delete</button>
+              <button onClick={() => props.handleDeleteItem(index)}>Delete</button>
             </div>
           </li>
         ))}
