@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Add.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addOffer } from '../../features/offers/offersSlice';
 
 function Add(props) {
   const [name, setName] = useState('');
@@ -28,11 +30,12 @@ function Add(props) {
   const handleAddressChange = event => {
     setAddress(event.target.value);
   };
-
+  
+  const dispatch = useDispatch()
   const handleSubmit = event => {
     event.preventDefault();
     const newItem = { name, description, bedrooms, price, address };
-    props.handleAddItem(newItem);
+    dispatch(addOffer(newItem));
     setName('');
     setDescription('');
     setBedrooms(0);
@@ -52,7 +55,7 @@ function Add(props) {
       <input type="number" id="price" value={price} onChange={handlePriceChange} required />
       <label htmlFor="address">Address:</label>
       <input type="text" id="address" value={address} onChange={handleAddressChange} required />
-      <div class="add-footer">
+      <div className="add-footer">
         <button id="submit" type="submit">Add</button>
         <Link to="/"><button id="back">Back to list</button></Link>     
       </div>

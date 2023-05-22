@@ -1,14 +1,21 @@
 [{
+    "id":1,
     "name": "Villa C13",
     "description": "villa with round windows, in summer you will feel the tropical atmosphere of the place",
     "bedrooms": 12,
     "price": 8000000,
-    "address": "wybrzeże Stanisława Wyspiańskiego 23-25, 50-370 Wrocław"
+    "address": "wybrzeże Stanisława Wyspiańskiego 23-25, 50-370 Wrocław",
+    "email": "pewuer123@pwrmail.com",
+    "followed": false
 },
 {
+  "id":2,
   "name": "Villa C16",
   "description": "a large estate with modern architecture located in a place known for the conquests of the Vikings, you can still meet their descendants here",
   "bedrooms": 4,
   "price": 6000000,
-  "address": "Janiszewskiego 7, 50-372 Wrocław"
+  "address": "Janiszewskiego 7, 50-372 Wrocław",
+  "email": "tVikingX86@pwrmail.com",
+  "followed": false
+
 }]

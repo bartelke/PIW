@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import List from './components/list/List';
 import Add from './components/add/Add';
 import './App.css';
+import { useDispatch } from 'react-redux';
+import { setListValue } from './features/offers/offersSlice';
+import { Followed } from './components/followed/Followed';
 
 function App() {
-  const [list, setList] = useState([]);
+  
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('/data.json');
         const data = await response.json();
-        setList(data);
+        //Dodajemy pełną liste na naszą półkę
+        dispatch(setListValue(data))
+        
+       // setList(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -21,22 +28,17 @@ function App() {
     fetchData();
   }, []);
 
-  const handleAddItem = newItem => {
-    setList([...list, newItem]);
-  };
+ 
 
-  const handleDeleteItem = index => {
-    const newList = [...list];
-    newList.splice(index, 1);
-    setList(newList);
-  };
+ 
 
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<List list={list} handleDeleteItem={handleDeleteItem} />} />
-          <Route path="/add" element={<Add handleAddItem={handleAddItem} />} />
+          <Route path="/" element={<List   />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/followed" element={<Followed />} />
         </Routes>
       </Router>
     </div>
