@@ -1,4 +1,4 @@
-import { logInWithGoogle, useAuth, logout } from "../../firebase/UserService";
+import { logInWithGoogle, useAuth, logout, logInWithFacebook } from "../../firebase/UserService";
 import "./Login.css"
 
 const Login = () => {
@@ -14,6 +14,7 @@ const Login = () => {
         <div className="App">
             <h2>Please log in</h2>
             <button onClick={logInWithGoogle}>Login with Google</button>
+            <button onClick={logInWithFacebook}>Login with Facebook</button>
         </div>
         );
 }
