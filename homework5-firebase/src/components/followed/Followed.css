@@ -1,0 +1,53 @@
+li {
+    width: 400px;
+    border-radius: 15px;
+    margin: 2em;
+    padding: 1em;
+    direction: none;
+    list-style-type: none;
+    background-color: white;
+}
+h2{
+    text-align: center;
+}
+.container {
+    background-color: #E5EEFF;
+}
+strong{
+    color: #3d1e10;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+.header{
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.header button{
+    background-color: #FFC004;
+    border-style: none;
+    height: 3em;
+    border-radius: 0.7em;
+}
+
+p{
+    margin: 1em;
+}
+
+.footer button {
+    background-color: white;
+    border: solid;
+    border-color: teal;
+    color: teal;
+    border-radius: 15px;
+}
+
+.followed{
+    color: #FFC004;
+}
+
+.unfollowed{
+    color: lightgray;
+}

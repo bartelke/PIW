@@ -1,0 +1,12 @@
+body {
+    background-color: #93BFCF;
+}
+button {
+    background-color: #93BFCF;
+    margin-left: 2em;
+    margin-bottom: 0.7em;
+    border: solid;
+    border-color: #6096B4;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
